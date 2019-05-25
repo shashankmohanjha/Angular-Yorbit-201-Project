@@ -1,0 +1,27 @@
+<div class="container-fluid" style="background-color: darkslategrey;">
+  <div class="row" style="background-color: white; margin:3% 15% 11.5% 15%;">
+    <h2>Book Details</h2>
+    <hr>
+    <div class="col-sm-3" style="margin: 2%;">
+      <div class="image-container">
+        <img src="../../assets/images/accounting{{book.id}}.jpg" alt="No Image available" height="100%" width="100%">
+      </div>
+      <div class="book-info-text">
+        <label> <b>Book Name : </b> <span>{{book.name}}</span></label><br>
+        <label> <b>Author : </b> <span>{{book.author}}</span></label><br>
+        <label> <b>Publisher : </b> <span>{{book.publisher}}</span></label><br>
+        <label> <b>ISBN : </b> <span>{{book.ISBN}}</span></label><br>
+        <label> <b>Edition : </b> <span>{{book.edition}}</span></label><br>
+        <label> <b>Number Of Pages : </b> <span>{{book.pages}}</span></label><br>
+        <label> <b>Ratings : </b> <span>{{book.ratings}}</span></label><br>
+        <label> <b>Reviews : </b> <span>{{book.reviews}}</span></label>
+      </div>
+    </div>
+    <div class="col-sm-4 margin-left-15">
+      <div class="book-details-container">
+        <label><b>Description : </b></label>
+        <p>{{book.description}}</p><br>
+      </div>
+    </div>
+  </div>
+</div>

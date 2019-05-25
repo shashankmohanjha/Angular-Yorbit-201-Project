@@ -1,0 +1,38 @@
+.book-container {
+  margin: 1%;
+}
+
+.image-container {
+  height: 200px;
+  width: 200px;
+}
+
+.category h3 {
+  font-size: 25px;
+}
+
+
+hr {
+  border-top: 3px solid black;
+}
+
+.not-available {
+  height: 100px;
+  width: 500px;
+}
+
+.not-available p {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(32, 118, 230);
+  margin-left: 40%;
+  margin-top: 20%;
+}
+
+
+
+@media (min-width: 768px) {
+  .col-sm-9 {
+    width: 82%;
+  }
+}

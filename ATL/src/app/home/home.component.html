@@ -1,0 +1,54 @@
+<div class="container-fluid" style="background-color: darkslategrey;">
+  <div class="row" style="margin: 1%;">
+    <div class="col-sm-2" style="border: 1px solid; height: auto; background-color: white;">
+      <h2>Filter</h2>
+      <hr>
+      <div class="categories">
+        <h3>Categories</h3>
+        <div *ngFor="let categoryfilter of categories">
+          <input type="checkbox" (change)="filterByCategory(categoryfilter)"> <span style="font-size: 20px;">
+            {{categoryfilter}}</span>
+        </div>
+      </div>
+      <div class="categories">
+        <h3>Authors</h3>
+        <div *ngFor="let author of allAuthors">
+          <input type="checkbox" (change)="filterByAuthor(author)"> <span style="font-size: 20px;"> {{author}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9" style="background-color: white; margin-left: 1%; float: right;">
+      <div class="container-fluid" *ngFor="let cat of categoriesAfterFilter">
+        <div *ngIf="ifBookAvailableInCategory(cat)">
+          <div class="category">
+            <h3>{{ cat }}</h3>
+          </div>
+          <hr>
+          <div class="row">
+            <div *ngFor="let book of libraryBooks">
+              <div *ngIf="book.category == cat">
+                <a [routerLink]="['../book-details',book.ISBN]">
+                  <div class="col-sm-2 book-container">
+                    <div class="image-container">
+                      <img src="../../assets/images/{{book.category | lowercase}}{{book.id}}.jpg" height="100%" width="100%">
+                    </div>
+                    <div class="book-info">
+                      <div class="book-name">
+                        {{book.name}}
+                      </div>
+                      <div class="book-author">
+                        {{book.author}}
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="not-available" *ngIf="!ifLibraryBooksAvailable()">
+        <p>No Books available for this filter! try other options...</p>
+      </div>
+    </div>
+  </div>

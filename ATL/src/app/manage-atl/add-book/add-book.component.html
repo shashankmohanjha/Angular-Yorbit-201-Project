@@ -1,0 +1,72 @@
+<form #addBookForm="ngForm">
+  <div class="container">
+    <h3 class="log-in-text">Add New Book</h3>
+    <!--Book Type-->
+    <label for="category">Book Type :</label>
+    <select class="form-control height-40" name="category" [(ngModel)]="book.category" required #category="ngModel">
+      <option value="" selected>Select Book Type</option>
+      <option value="Accounting">Accounting</option>
+      <option value="Biographical">Biographical</option>
+      <option value="Digital">Digital</option>
+      <option value="Finance">Finance</option>
+    </select>
+    <div [hidden]="category.valid || category.pristine" class="alert alert-danger">
+      Category is required
+    </div>
+
+    <!--Book Name-->
+    <label for="name" class="margin-top-30"><b>Book Name</b></label>
+    <input type="text" placeholder="Enter Book Name" name="name" [(ngModel)]="book.name" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      Name is required
+    </div>
+
+    <!--Author Name-->
+    <label for="author" class="margin-top-30"><b>Author Name</b></label>
+    <input type="text" placeholder="Enter Author Name" name="author" [(ngModel)]="book.author" required #author="ngModel">
+    <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+      Athor Name is required
+    </div>
+
+    <!--ISBN-->
+    <label for="ISBN" class="margin-top-30"><b>ISBN</b></label>
+    <input type="number" placeholder="Enter ISBN" name="ISBN" [(ngModel)]="book.ISBN" minlength="13" required #ISBN="ngModel">
+    <div *ngIf="ISBN.invalid && (ISBN.dirty || ISBN.touched)" class="alert alert-danger">
+      <div *ngIf="ISBN.errors.required">
+          ISBN is required
+      </div>
+      <div *ngIf="ISBN.errors.minlength">
+        ISBN must be at least 13 digits long.
+      </div>
+    </div>
+
+    <!--Publisher's Name-->
+    <label for="publisher" class="margin-top-30"><b>Publisher's Name</b></label>
+    <input type="text" placeholder="Enter Publisher's Name" name="publisher" [(ngModel)]="book.publisher">
+
+    <!--Number of Pages-->
+    <label for="pages" class="margin-top-30"><b>Number Of Pages</b></label>
+    <input type="text" placeholder="Enter Number of Pages" name="pages" [(ngModel)]="book.pages">
+
+    <!-- Edition -->
+    <label for="edition" class="margin-top-30"><b>Edition</b></label>
+    <input type="text" placeholder="Enter Edition" name="edition" [(ngModel)]="book.edition">
+
+    <!--Book Shelf-->
+    <!-- <label for="uname" class="margin-top-30"><b>Book Shelf</b></label>
+  <input type="text" placeholder="Enter Book Shelf" name="uname" [(ngModel)]="book.name"> -->
+
+    <!-- Availability -->
+    <!-- <label for="uname" class="margin-top-30"><b>Availability</b></label>
+  <input type="text" placeholder="Enter Number of Books to be added" name="uname" [(ngModel)]="book.name"> -->
+
+    <!-- Description -->
+    <label for="description" class="margin-top-30"><b>Description</b></label>
+    <input type="text" placeholder="Enter Description" name="description" [(ngModel)]="book.description" required #description="ngModel">
+    <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+      Description is required
+    </div>
+
+    <button type="submit" class="margin-top-30" (click)="addBook()" [disabled]="!addBookForm.form.valid">Add book</button>
+  </div>
+</form>

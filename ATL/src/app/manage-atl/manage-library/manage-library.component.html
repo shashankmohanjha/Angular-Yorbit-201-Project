@@ -1,0 +1,23 @@
+<div class="container-fluid" style="background-color: darkslategrey;">
+  <div class="row" style="background-color: white; margin:3% 15% 11.5% 15%;">
+    <div class="col-sm-3">
+      <div class="sidenav" style="background-color: darkslategrey;">
+        <a [routerLink]="['./']">Add New Book</a>
+        <hr>
+        <a [routerLink]="['./search-book']">Search a book</a>
+        <hr>
+        <a [routerLink]="['./issue-book']">Issue Book</a>
+        <hr>
+        <a [routerLink]="['./renew-book']">Renew Book</a>
+        <hr>
+        <a [routerLink]="['./return-book']">Return Book</a>
+        <hr>
+        <a [routerLink]="['./notify-location']">Notify the Book location</a>
+        <hr>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

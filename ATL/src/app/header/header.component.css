@@ -1,0 +1,40 @@
+.page-header {
+  background-color: teal;
+  color: white;
+  margin: 0%;
+  padding-bottom: 0px;
+}
+
+.header-logo {
+    margin-left: 2%;
+    padding-top: 2%;
+    width: 5%;
+    cursor: pointer;
+}
+
+.header-logo h1{
+    margin-top: 0%;
+    color: white;
+    line-height: 0.8;
+    outline: none;
+}
+
+.navbar-header a {
+    color: white;
+    font-size: 30px;
+    margin-left: 5%;
+}
+
+li a{
+    color: white;
+}
+
+li a:hover{
+    background-color: cornflowerblue;
+}
+
+.search-box {
+    width: 700px;  
+    padding-right: 20%;
+    padding-top: 1.5%;
+}
